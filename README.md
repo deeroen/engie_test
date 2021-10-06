@@ -30,8 +30,7 @@ The REST API to the example app is described below.
 
 `POST /productionplan` on port 8888
 
-    curl -X POST localhost:8888/productionplan -d '<YOUR Json INPUT>'
-
+    
 ### Response
 
 
