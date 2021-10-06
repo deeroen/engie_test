@@ -39,13 +39,14 @@ The REST API to the example app is described below.
     Server: Werkzeug/2.0.1 Python/3.9.2
     Date: Wed, 06 Oct 2021 08:59:36 GMT
     
-    [{
+    [
+    {
         "name": "gasfiredbig1",
         "p": 460
     },
     {
         "name": "gasfiredbig2",
-        "p": 226.0
+        "p": 235.1
     },
     {
         "name": "gasfiredsomewhatsmaller",
@@ -53,7 +54,7 @@ The REST API to the example app is described below.
     },
     {
         "name": "tj1",
-        "p": 16
+        "p": 0
     },
     {
         "name": "windpark1",
@@ -63,6 +64,7 @@ The REST API to the example app is described below.
         "name": "windpark2",
         "p": 36
     }]
+
 
 
 
