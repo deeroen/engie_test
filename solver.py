@@ -1,5 +1,3 @@
-
-
 def solver(input_info):
     def price(dct, fuel, input_info):
         if "wind(%)" == fuel:
@@ -9,16 +7,15 @@ def solver(input_info):
         else:
             dct['prod_min'] = dct['pmin'] * dct['efficiency']
             dct['prod_max'] = dct['pmax'] * dct['efficiency']
-            dct['eff_cost'] = 1/(input_info["fuels"][fuel] + 0.3 * input_info["fuels"]["co2(euro/ton)"]) * dct['efficiency']
+            dct['eff_cost'] = 1 / (input_info["fuels"][fuel] + 0.3 * input_info["fuels"]["co2(euro/ton)"]) * dct[
+                'efficiency']
         return 1
 
     process = {}
     for keys, values in input_info.items():
         if keys == 'powerplants':
-            # Create the out file
 
             for dict in values:
-                # Fill the out file
 
                 if dict['type'] == 'gasfired':
                     price(dict, "gas(euro/MWh)", input_info)
@@ -32,7 +29,7 @@ def solver(input_info):
     load = input_info['load']
 
     item_cost = {keys: [values['eff_cost'], values["pmin"]] for keys, values in process.items()}
-    #if same eff_cost, take first the one with high pmin
+    # if same eff_cost, take first the one with high pmin
     best_items = sorted(item_cost.items(), key=lambda item: (-item[1][0], -item[1][1]))
 
     while load > 0:
@@ -45,7 +42,7 @@ def solver(input_info):
             load = load - data["prod_max"]
             process[name]['p'] = data["pmax"]
         else:
-            process[name]['p'] = round(load / data['efficiency'],1)
+            process[name]['p'] = round(load / data['efficiency'], 1)
             load = 0
 
         del best_items[0]
