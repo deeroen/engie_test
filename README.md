@@ -13,14 +13,11 @@ powerplants is exactly equal to the load specified in the payload.
 
     pip install -r requirements.txt
 
-## With Docker
-
-mkdir python-docker
 
 
 ## Run the app
 
-    python main.py
+    python app.py
 
 
 # REST API
