@@ -1,4 +1,4 @@
-# REST API engie
+# Challenge engie
 
 This is an application providing a REST
 API for engie challenge.
