@@ -24,7 +24,7 @@ powerplants is exactly equal to the load specified in the payload.
 
 The REST API to the example app is described below.
 
-## Create a new Thing
+## Request the loads
 
 ### Request
 
