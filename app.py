@@ -2,6 +2,7 @@ from flask import Flask, request
 from flask_restful import reqparse, abort, Api, Resource, request
 from solver import solver
 
+
 app = Flask(__name__)
 api = Api(app)
 
@@ -19,10 +20,11 @@ class ProductionPlan(Resource):
             return 'Error occurred : ' + str(e)
 
 
-##
-## Actually setup the Api resource routing here
-##
+@app.route('/')
+def hello_world():
+    return 'Hey, we have Flask in a Docker container!'
+
 api.add_resource(ProductionPlan, '/productionplan')
 
 if __name__ == '__main__':
-    app.run(debug=True,port=8888)
+    app.run(debug=True,port=8080)

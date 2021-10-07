@@ -9,15 +9,15 @@ The entire application is contained within the `app.py` file.
 powerplants is exactly equal to the load specified in the payload.
 This solver takes into account the price of the CO2 emitted. 
 
-## Install
+## Install with Docker
 
-    pip install -r requirements.txt
+    docker build -t python-docker .
+    
 
 
+## Run the container
 
-## Run the app
-
-    python app.py
+    docker run --publish 8080:5000 python-docker
 
 
 # REST API
@@ -28,7 +28,8 @@ The REST API to the example app is described below.
 
 ### Request
 
-`POST /productionplan` on port 8888
+`POST /productionplan` on port 8888 and localhost (http://localhost:8080/productionplan) 
+along with the proper json file (body)
 
     
 ### Response
@@ -36,7 +37,7 @@ The REST API to the example app is described below.
 
     Content-Type: application/json
     Content-Length: 369
-    Server: Werkzeug/2.0.1 Python/3.9.2
+    Server: Werkzeug/2.0.1 Python/3.8.12
     Date: Wed, 06 Oct 2021 08:59:36 GMT
     
     [
